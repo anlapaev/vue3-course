@@ -2,6 +2,8 @@
     <form class="form-post" action="" @submit.prevent>
         <h4>Создание поста</h4>
         <my-input
+            
+            v-focus
             v-model="post.title"
             type="text"
             placeholder="Название поста"
@@ -17,9 +19,9 @@
 </template>
 
 <script>
-import MyInput from './UI/MyInput.vue';
+import MyInput from "./UI/MyInput.vue";
 export default {
-  components: { MyInput },
+    components: { MyInput },
     data() {
         return {
             post: {
@@ -35,7 +37,7 @@ export default {
             this.post = {
                 title: "",
                 body: "",
-            }
+            };
         },
     },
 };
@@ -81,8 +83,6 @@ export default {
     background: rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
-
-
 
 /* .container {
     padding: 20px;

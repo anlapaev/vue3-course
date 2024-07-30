@@ -1,10 +1,23 @@
 <template>
     <div class="post">
         <div>
-            <div><strong>Название:</strong> <p class="p-text">{{ post.title }}</p></div>
-            <div><strong>Описание:</strong> <p class="p-text">{{ post.body }}</p></div>
+            <div>
+                <strong>ID:</strong>
+                <p class="p-text">{{ post.id }}</p>
+            </div>
+            <div>
+                <strong>Название:</strong>
+                <p class="p-text">{{ post.title }}</p>
+            </div>
+            <div>
+                <strong>Описание:</strong>
+                <p class="p-text">{{ post.body }}</p>
+            </div>
         </div>
         <div class="post__btns">
+            <my-button @click="$router.push('/posts/' + post.id)"
+                >Открыть</my-button
+            >
             <my-button @click="$emit('remove', post)">Удалить</my-button>
         </div>
     </div>
